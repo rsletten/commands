@@ -1,0 +1,11 @@
+[Unit]
+Description=Grafana Container
+
+[Service]
+Restart=always
+User=rsletten
+ExecStart=/usr/bin/podman start -a grafana 
+ExecStop=/usr/bin/podman stop -t 2 grafana
+
+[Install]
+WantedBy=local.target

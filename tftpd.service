@@ -1,0 +1,11 @@
+[Unit]
+Description=TFTPD Container
+
+[Service]
+Restart=always
+User=rsletten
+ExecStart=/usr/bin/podman start -a tftpd 
+ExecStop=/usr/bin/podman stop -t 2 tftpd
+
+[Install]
+WantedBy=local.target

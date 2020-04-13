@@ -1,0 +1,11 @@
+[Unit]
+Description=Tautulli Container
+
+[Service]
+Restart=always
+User=rsletten
+ExecStart=/usr/bin/podman start -a tautulli 
+ExecStop=/usr/bin/podman stop -t 2 tautulli
+
+[Install]
+WantedBy=local.target

@@ -1,0 +1,1 @@
+podman run -d --privileged -p 192.168.1.224:8125:8125 -p 192.168.1.224:8092:8092 -p 192.168.1.224:8094:8094 -v /home/rsletten/data/telegraf:/etc/telegraf --name telegraf nuntz/telegraf-snmp

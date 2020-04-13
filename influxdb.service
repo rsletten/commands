@@ -1,0 +1,11 @@
+[Unit]
+Description=InfluxDB Container
+
+[Service]
+Restart=always
+User=rsletten
+ExecStart=/usr/bin/podman start -a influxdb 
+ExecStop=/usr/bin/podman stop -t 2 influxdb
+
+[Install]
+WantedBy=local.target

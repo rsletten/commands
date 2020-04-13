@@ -1,0 +1,23 @@
+podman create \
+-d \
+--name plex \
+-p 192.168.1.222:32400:32400/tcp \
+-p 192.168.1.222:3005:3005/tcp \
+-p 192.168.1.222:8324:8324/tcp \
+-p 192.168.1.222:32469:32469/tcp \
+-p 192.168.1.222:1900:1900/udp \
+-p 192.168.1.222:32410:32410/udp \
+-p 192.168.1.222:32412:32412/udp \
+-p 192.168.1.222:32413:32413/udp \
+-p 192.168.1.222:32414:32414/udp \
+-e ADVERTISE_IP="http://192.168.1.222:32400/" \
+-e TZ="America\New-York" \
+-e PLEX_CLAIM="claimcode" \
+-e PLEX_UID=1000 \
+-e PLEX_GID=1000 \
+-e ALLOWED_NETWORKS=192.168.1.0/24 \
+-v /home/rsletten/data/plex:/config \
+-v /home/rsletten/data/plex/transcode:/transcode \
+-v /media/TV:/tv \
+-v /media/Movies:/movies \
+plexinc/pms-docker

@@ -1,0 +1,11 @@
+[Unit]
+Description=Plex Container
+
+[Service]
+Restart=always
+User=rsletten
+ExecStart=/usr/bin/podman start -a plex 
+ExecStop=/usr/bin/podman stop -t 2 plex
+
+[Install]
+WantedBy=local.target

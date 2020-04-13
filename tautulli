@@ -1,0 +1,9 @@
+podman run \
+  -d \
+  --name=tautulli \
+  -v /home/rsletten/data/tautulli:/config \
+  -v /home/rsletten/data/plex/Library/Application\ Support/Plex\ Media\ Server/Logs:/plex_logs:ro \
+  -e PGID=1000 -e PUID=1000  \
+  -e TZ=America/New_York \
+  -p 192.168.1.222:8181:8181 \
+  tautulli/tautulli
