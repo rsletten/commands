@@ -1,1 +1,9 @@
-podman container run -d --privileged --hostname gitlab.rsletten.com --name gitlab -p 192.168.1.225:22:22/tcp -p 192.168.1.225:80:80/tcp -p 192.168.1.225:443:443/tcp -v /home/rsletten/data/gitlab/config:/etc/gitlab -v /home/rsletten/data/gitlab/data:/var/opt/gitlab -v /home/rsletten/data/gitlab/log:/var/log/gitlab gitlab/gitlab-ce:latest
+podman run -d --hostname gitlab.rsletten.com --name gitlab \
+-p 192.168.1.225:22:22/tcp \
+-p 192.168.1.225:80:80/tcp \
+-p 192.168.1.225:443:443/tcp \
+-v /srv/gitlab/config:/etc/gitlab \
+-v /srv/gitlab/data:/var/opt/gitlab \
+-v /srv/gitlab/logs:/var/log/gitlab \
+--ulimit nofile=8192:8192 \
+gitlab/gitlab-ce:latest
