@@ -1,4 +1,4 @@
-podman create \
+podman start \
 -d \
 --name plex \
 -p 192.168.1.222:32400:32400/tcp \
