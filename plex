@@ -1,5 +1,6 @@
-podman start \
+docker run \
 -d \
+--restart always \
 --name plex \
 -p 192.168.1.222:32400:32400/tcp \
 -p 192.168.1.222:3005:3005/tcp \
@@ -20,4 +21,8 @@ podman start \
 -v /home/rsletten/data/plex/transcode:/transcode \
 -v /media/TV:/tv \
 -v /media/Movies:/movies \
+-v /mnt/8t/Movies:/movies2 \
+-v /mnt/8t/TV:/tv2 \
+-v /mnt/3t/Movies:/movies3 \
+-v /mnt/3t/TV:/tv3 \
 plexinc/pms-docker

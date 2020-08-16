@@ -1,1 +1,1 @@
-podman run -d -p 192.168.1.224:8086:8086 -v /home/rsletten/data/influxdb:/var/lib/influxdb --name influxdb influxdb
+docker run --restart always -d -p 192.168.1.224:8086:8086 -v /home/rsletten/data/influxdb:/var/lib/influxdb --name influxdb influxdb

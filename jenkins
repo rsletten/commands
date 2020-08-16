@@ -1,1 +1,1 @@
-podman container run -d --privileged --name jenkins -p 192.168.1.221:8080:8080 -p 192.168.1.221:50000:50000 -v /home/rsletten/ansible:/var/jenkins_home/ansible -v /home/rsletten/data/jenkins:/var/jenkins_home rsletten/jenkins:lts
+docker run --restart always -d --privileged --name jenkins -p 192.168.1.221:8080:8080 -p 192.168.1.221:50000:50000 -v /home/rsletten/ansible:/var/jenkins_home/ansible -v /home/rsletten/data/jenkins:/var/jenkins_home rsletten/jenkins:inspec

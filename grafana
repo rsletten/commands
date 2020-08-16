@@ -1,1 +1,1 @@
-podman run -d --privileged -p 192.168.1.224:3000:3000 -v /home/rsletten/data/grafana:/var/lib/grafana --name grafana grafana/grafana
+docker run --restart always --user 1000 -d --privileged -p 192.168.1.224:3000:3000 -v /home/rsletten/data/grafana:/var/lib/grafana --name grafana grafana/grafana

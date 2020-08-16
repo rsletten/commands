@@ -1,4 +1,5 @@
-podman run \
+docker run \
+  --restart always \
   -d \
   --name=tautulli \
   -v /home/rsletten/data/tautulli:/config \
