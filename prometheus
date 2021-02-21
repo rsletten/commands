@@ -1,0 +1,1 @@
+docker run -d --restart unless-stopped -p 192.168.1.231:9090:9090/tcp -v /home/rsletten/prometheus:/etc/prometheus --name prometheus prom/prometheus
