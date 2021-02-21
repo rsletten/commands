@@ -1,4 +1,4 @@
-podman run -d --hostname gitlab.rsletten.com --name gitlab \
+docker run -d --hostname gitlab.rsletten.com --name gitlab \
 -p 192.168.1.225:22:22/tcp \
 -p 192.168.1.225:80:80/tcp \
 -p 192.168.1.225:443:443/tcp \
