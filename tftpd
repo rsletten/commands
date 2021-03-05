@@ -1,1 +1,1 @@
-podman run -d --privileged -p 192.168.1.226:69:69/udp -e PUID=1000 -e PGID=1000 -v /home/rsletten/data/tftpboot:/data --name tftpd wastrachan/tftpd
+docker run -d --privileged -p 192.168.1.226:69:69/udp -e PUID=100 -e PGID=101 -v /home/rsletten/data/tftpboot:/data --name tftpd wastrachan/tftpd
